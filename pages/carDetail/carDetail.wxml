@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<view class="place-view">
+  <image src="{{car.fm_images}}" class="slide-image" mode="aspectFill"></image>
+  <view class="place_msg">
+    <text class="place_name">{{car.name}}</text>
+  </view>
+  <view class="parameter-data">
+    <view class="parameter-item">
+      <text class="parameter_name">所属公司</text>
+      <text class="parameter_val" decode="{{true}}">{{car.compony}}</text>
+    </view>
+    <view class="parameter-item">
+      <text class="parameter_name">公司地址</text>
+      <text class="parameter_val" decode="{{true}}">{{car.address}}</text>
+    </view>
+    <view class="parameter-item">
+      <text class="parameter_name">联系电话</text>
+      <text class="parameter_val" decode="{{true}}">{{car.tel}}</text>
+    </view>
+    <view class="parameter-item">
+      <text class="parameter_name">基本费用</text>
+      <text class="parameter_val" decode="{{true}}">{{car.introduce}}</text>
+    </view>
+    <view class="parameter-item">
+      <text class="parameter_name">额外收费</text>
+      <text class="parameter_val" decode="{{true}}">{{car.tip}}</text>
+    </view>
+  </view>
+</view>
+<view class="footer">
+
+  <button class="collect" size="mini" bindtap="collect">收藏</button>
+  <button class="buy" size="mini" bindtap="buy">预定</button>
+</view>
+
+<view wx:if="{{showSpecMenu}}" class="spec-menu">
+  <view class="spec-menu-top">
+    <view class="spec-pic-content">
+      <image src="{{car.fm_images}}" class="spec-pic"></image>
+    </view>
+    <button class="spec-menu-close" bindtap="hideSpecMenu">
+      <icon type="clear" color="#ddd" />
+    </button>
+    <view class="spec-summary">
+      <text class="name">{{car.name}}</text>
+    </view>
+  </view>
+  <view class="spec-menu-top1">
+    <view class="spec-menu-middle">
+      <view class="quantity-wrapper" bindtap="navigateData">
+        <view class='wz'>租赁日期 ：</view>
+        <view class='zl'>{{checkInDate}}</view>
+      </view>
+      <view class="quantity-wrapper" bindtap="navigateData">
+        <view class='wz'>归还日期 ：</view>
+        <view class='zl'>{{checkOutDate}}</view>
+      </view>
+      <view class="quantity-wrapper">
+        <view class='wz'>总天数 ：</view>
+        <view class='zl'>{{day}}</view>
+      </view>
+      <view class="quantity-wrapper">
+        <view class='wz'>数量</view>
+        <view class="quantity-btn zl">
+          <button bindtap='sub'>-</button>
+          <input type="text" value='{{amount}}' />
+          <button bindtap='add'>+</button>
+        </view>
+      </view>
+
+      <view class="quantity-wrapper">
+        <view class='wz'>日租单价 ：</view>
+        <view class='zl'>¥{{car.unit_price}}</view>
+      </view>
+      <view class='fg'></view>
+      <view class="quantity-wrapper">
+        <view class='wz'>总价：</view>
+        <view class='zl zong'>¥{{car.unit_price*day*amount}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="spec-menu-bottom">
+    <button bindtap='submit'>确定</button>
+  </view>
+</view>

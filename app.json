@@ -1,0 +1,99 @@
+{
+  "pages": [
+   
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/introduce/introduce",
+    "pages/city/city",
+    "pages/destination/destination",
+    "pages/method/method",
+    "pages/method_into/method_into",
+    "pages/order/order",
+    "pages/collect/collect",
+    "pages/orderDetail/orderDetail",
+    "pages/question/question",
+    "pages/strategypost/strategypost",
+    "pages/classily/classily",
+    "pages/recommend/recommend",
+    "pages/hotel/hotel",
+    "pages/hotelDetail/hotelDetail",
+    "pages/calendar/calendar",
+    "pages/tripdst/tripdst",
+    "pages/newlist/newlist",
+    "pages/newsdetail/newsdetail",
+    "pages/situation/situation",
+    "pages/story/story",
+    "pages/minsu/minsu",
+    "pages/yanchu/yanchu",
+    "pages/guide/guide",
+    "pages/guide_detail/guide_detail",
+    "pages/guideorder/guideorder",
+    "pages/coupon/coupon",
+    "pages/specialtylist/specialtylist",
+    "pages/special_detail/special_detail",
+    "pages/food/food",
+    "pages/food_detail/food_detail",
+    "pages/map/map",
+    "pages/parking/parking",
+    "pages/car/car",
+    "pages/carDetail/carDetail",
+    "pages/agritainmentDetail/agritainmentDetail",
+    "pages/agritainment/agritainment",
+    "pages/route/route",
+    "pages/lyplus/lyplus",
+    "pages/routeDetail/routeDetail",
+    "pages/panorama/panorama",
+    "pages/player/player",
+    "pages/video/video"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F8F8FF",
+    "navigationBarTitleText": "travel",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#666"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#3399CC",
+    "backgroundColor": "#FAFAFA",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/tabbar/index.png",
+        "selectedIconPath": "images/tabbar/index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/lyplus/lyplus",
+        "iconPath": "images/tabbar/box.png",
+        "selectedIconPath": "images/tabbar/box1.png",
+        "text": "百宝箱"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "iconPath": "images/tabbar/introduce.png",
+        "selectedIconPath": "images/tabbar/introduce1.png",
+        "text": "推荐"
+      },
+      {
+        "selectedIconPath": "images/tabbar/tv1.png",
+        "iconPath": "images/tabbar/tv.png",
+        "pagePath": "pages/player/player",
+        "text": "直播"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/tabbar/person.png",
+        "selectedIconPath": "images/tabbar/person1.png",
+        "text": "关于我"
+      }
+    ],
+    "position": "bottom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

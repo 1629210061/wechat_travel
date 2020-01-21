@@ -1,0 +1,43 @@
+<!--pages/strategypost.wxml-->
+<view class="container">
+  <!--文本域  -->
+  <view class="weui-cells_after-title1">
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" bindinput="bindTextAreaChange1" placeholder="" style="height: 2em" maxlength="{{noteMaxLen}}" focus />
+        
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" bindinput="bindTextAreaChange2" placeholder="内容" style="height: 16em"  maxlength="{{noteMaxLen}}" focus />
+        <view class="weui-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui">
+    <view class="weui-uploader">
+      <view class="weui-uploader__files">
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:for-index='idx'>
+          <view class="weui-uploader__file">
+            <image class="weui-uploader__img" src="{{image}}" data-id="{{idx}}" data-src="{{image}}" bindtap="previewImage"></image>
+          </view>
+        </block>
+      </view>
+      <view class="weui-uploader__input-box">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+  </view>
+
+  <!--发布按钮  -->
+  <view class="btnSf">
+    <button bindtap="bindSubmit">发布</button>
+  </view>
+
+</view>

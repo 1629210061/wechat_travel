@@ -1,0 +1,56 @@
+<!--pages/orderManage/orderDeatail.wxml-->
+
+<view class="container marginTop10">    
+    <view class="flexItem rowStyle tableViewCellHeader heightAndWidth">
+        <image class="orderImage marginLeft12" src="../../images/dingdan.png"></image>
+        <label class="color54 fontSize12">订单编号: 79879878789</label>
+    </view>
+
+    <view class="flexItem rowStyle personInfo">
+        <view class="flexItem rowStyle marginLeft12 centers">
+            <image class="userHeader" src='{{order.picurl}}'></image>
+            <label class="color54 fontSize11 ">{{order.name}}</label> 
+
+        </view>
+<!--     
+
+        <view class="flexItem rowStyle marginRight12 centers" catchtap="callEvent">
+            <image class="call" src="../../images/call.png"></image>
+            <label class="color54 fontSize12">6876876876</label>
+        </view> -->
+    </view>
+
+    <view class=" heightAndWidth flexItem columnStyle tableViewCell">
+        <view class="flexItem rowStyle marginBottom10 cellStyle marginRight12 marginLeft12">
+            <label class="color54 fontSize12">限用日期</label>
+            <label class="fontSize14">{{order.limited}}</label>
+        </view>
+
+        <view class="flexItem rowStyle marginBottom10 cellStyle marginRight12 marginLeft12">
+            <label class="color54 fontSize12">下单时间</label>
+            <label class="color54 fontSize12">{{order.time}}</label>
+        </view>
+
+        <view class="flexItem rowStyle marginBottom10 cellStyle marginRight12 marginLeft12">
+            <label class="color54 fontSize12">购买数量</label>
+            <label class="color54 fontSize12">{{order.amount}}</label>
+        </view>
+        <view class="flexItem rowStyle marginBottom10 cellStyle marginRight12 marginLeft12">
+            <label class="color54 fontSize12">总价</label>
+            <label class="color54 fontSize12">{{order.price*order.amount}}</label>
+        </view>
+    </view>
+
+    <view class="flexItem rowStyle  orderStatus2">
+        <image class="statusImage" src="{{ statusImage[0] }}"></image>
+        <label class="statusText1 fontSize13">取门票</label>
+    </view>
+    <view class="flexItem rowStyle  orderStatus">      
+        <label class="statusText fontSize14">取票码：{{order.ticketcode}}</label>
+    </view>
+
+     <view class="flexItem rowStyle orderStatus1">
+     <canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas'></canvas>
+      <!-- <image class="statusImage1" src='http://47.100.19.206/images/xihu/3.jpg'></image> -->
+    </view>
+</view>

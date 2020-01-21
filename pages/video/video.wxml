@@ -1,0 +1,5 @@
+<!--pages/video/viedo.wxml-->
+
+<view class='video'>
+ <video style="width: 100%;height=400px;margin:1px;" src="{{videourl}}" binderror="videoErrorCallback"></video>
+</view>

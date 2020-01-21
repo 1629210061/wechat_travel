@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="goods-view">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-color="rgba(0, 0, 0, 0.1)" indicator-active-color="rgba(0, 0, 0, 0.6)">
+    <block wx:for="{{lb_pic}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="goods_msg">
+    <text class="goods_name">{{specialty.name}}</text>
+    <text class="goods_price">¥{{specialty.price}}</text>
+  </view>
+  <view class="tab">
+    <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">商品详情</view>
+    <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">参数</view>
+  </view>
+  <view class="details" wx:if="{{currentTab==0}}">
+    <block wx:for="{{detail_pic}}">
+      <image class="details-img" src="{{item}}" mode="widthFix"></image>
+    </block>
+  </view>
+  <view class="parameter" wx:if="{{currentTab==1}}">
+    <view wx:if="{{!specialty.parameter||specialty.parameter.length==0}}" class="no-parameter">该商品没有参数</view>
+    <view class="parameter-data">
+      <view class="parameter-item">
+        <view class="parameter_name"><text>{{specialty.parameter}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <button class="buy" size="mini" bindtap="copyText" data-text="{{specialty.link}}">复制链接前往淘宝</button>
+  </view>
+
+
+
+  
+
+</view>

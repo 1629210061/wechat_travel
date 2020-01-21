@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container1">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{swiperurl}}">
+      <swiper-item class="banner" >
+          <image src="{{item.imgurl}}"  data-id="{{item.id}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%"/>
+          <text class="banner-title">{{item.title}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="news-item-container">
+    <block wx:for="{{minsu}}">
+      <navigator url="../newsdetail/newsdetail?id={{item.id}}">
+
+        <view class="news-item" >
+          <view class="news-item-right">
+            <image src="{{item.fm_url}}" class="news-image"/>
+          </view>
+          <view class="news-item-left">
+            <text class="news-item-title">{{item.title}}</text>
+          </view>         
+        </view>
+      </navigator>
+    </block>
+
+  </view>
+  
+</view>

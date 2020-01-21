@@ -1,0 +1,12 @@
+<view class="weui-grids">  
+    <view class="weui-grid" wx:for="{{routers}}" wx:key="category" bindtap="enterDetail" data-category="{{item.category}}">  
+
+        <view class="weui-grid__icon">  
+          <image src="{{item.icon}}" mode="scaleToFill" />  
+        </view>  
+        <text class="weui-grid__label">{{item.category}}</text>  
+ 
+    </view>  
+  </view>  
+
+

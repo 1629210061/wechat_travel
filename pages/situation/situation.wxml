@@ -1,0 +1,104 @@
+<!--pages/situation/situation.wxml-->
+<view class="container1">
+  <view class="news-item-container">
+
+        <view class="news-item" bindtap='click' data-name='上城区'>
+          <view class="news-item-left">
+            <text class="news-item-title">上城区</text>
+
+          </view>        
+        </view>
+        <view class="news-item" bindtap='click' data-name='下城区'>
+          <view class="news-item-left">
+            <text class="news-item-title">下城区</text>
+          </view>
+        </view>
+  </view>
+
+  <view class="news-item-container">
+
+        <view class="news-item" bindtap='click' data-name='江干区'>
+          <view class="news-item-left">
+            <text class="news-item-title">江干区</text>
+
+          </view>        
+        </view>
+        <view class="news-item" bindtap='click' data-name='拱墅区'>
+          <view class="news-item-left">
+            <text class="news-item-title">拱墅区</text>
+          </view>
+        </view>
+  </view>
+  
+  <view class="news-item-container">
+
+        <view class="news-item" bindtap='click' data-name='西湖区'>
+          <view class="news-item-left">
+            <text class="news-item-title">西湖区</text>
+
+          </view>        
+        </view>
+        <view class="news-item" bindtap='click' data-name='滨江区'>
+          <view class="news-item-left">
+            <text class="news-item-title">滨江区</text>
+          </view>
+        </view>
+  </view>
+  
+  <view class="news-item-container">
+
+        <view class="news-item" bindtap='click' data-name='萧山区'>
+          <view class="news-item-left">
+            <text class="news-item-title">萧山区</text>
+
+          </view>        
+        </view>
+        <view class="news-item" bindtap='click' data-name='余杭区' >
+          <view class="news-item-left">
+            <text class="news-item-title">余杭区</text>
+          </view>
+        </view>
+  </view>
+  
+  <view class="news-item-container">
+
+        <view class="news-item" bindtap='click' data-name='富阳区'>
+          <view class="news-item-left">
+            <text class="news-item-title">富阳区</text>
+
+          </view>        
+        </view>
+        <view class="news-item" bindtap='click'data-name='临安区'>
+          <view class="news-item-left">
+            <text class="news-item-title">临安区</text>
+          </view>
+        </view>
+  </view>
+
+  
+  <view class="news-item-container">
+
+        <view class="news-item" bindtap='click' data-name='桐庐县'>
+          <view class="news-item-left">
+            <text class="news-item-title">桐庐县</text>
+
+          </view>        
+        </view>
+        <view class="news-item" bindtap='click' data-name='淳安县'>
+          <view class="news-item-left">
+            <text class="news-item-title">淳安县</text>
+          </view>
+        </view>
+  </view>
+  
+  <view class="news-item-container"> 
+        <view class="news-item" bindtap='click'data-name='建德市'>
+          <view class="news-item-left">
+            <text class="news-item-title">建德市</text>
+          </view>
+        </view>
+        
+  </view>
+
+
+</view>

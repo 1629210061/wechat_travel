@@ -1,0 +1,4 @@
+<!--pages/panorama/panorama.wxml-->
+
+
+<web-view src="https://www.ourpeace.top/Trip/360panorama.jsp" bindmessage="msgHandler"></web-view>

@@ -1,0 +1,19 @@
+<view class="container">
+  
+  <scroll-view scroll-y="{{true}}" class="scroll-view" bindscrolltolower="scrolltolower">
+
+     <view class="scroll-inner-view">
+       <navigator url="../newsdetail/newsdetail?id={{item.id}}" class="news-wrapper" wx:for="{{yanchu}}" >
+         <image class="img" mode="scaleToFill" src="{{item.fm_url}}"></image>
+         <view class="info-wrapper">
+            <text class="title">{{item.title}}</text>
+            <view class="bottom">
+              <text class="total-comment">{{item.author}} </text>
+            </view>
+            
+         </view>
+        </navigator>
+      </view>
+
+  </scroll-view>
+</view>

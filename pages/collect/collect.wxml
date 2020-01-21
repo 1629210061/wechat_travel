@@ -1,0 +1,33 @@
+<view class="container">
+  <!--list-->
+  <view class="nav_section">
+    <view wx:if="{{collects.length>0}}">
+      <block wx:for="{{collects}}" wx:key="item.id"  >
+        <view class="nav_section_items" >
+          <!--image-->
+          <view class="section_image"  bindtap="enterDetail" data-cnname="{{item.name}}" >
+            <block>
+              <image src="{{item.picurl}}" mode="aspectFill"></image>
+            </block>
+            <!-- <block wx:else>
+                  <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block> -->
+          </view>
+          <!--content-->
+          <view class="section_cont" >
+            <view class="section_cont_sub">
+              <text>{{item.name}}</text>
+            </view>
+            <image class='img' data-id='{{item.id}}' bindtap='deletecollect' src = "../../images/delete.png"></image>
+          </view>
+        </view>
+
+      </block>
+
+    </view>
+
+    <view wx:else>
+    <image class='kong' src='../../images/zhanweitu.png'></image>
+    </view>
+  </view>
+</view>

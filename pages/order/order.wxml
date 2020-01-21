@@ -1,0 +1,90 @@
+<!--order.wxml-->
+<view class="top-tab flexItem flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+<view class="container">
+
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore">
+    <view class="tab_con flexItem rowStyle {{currentNavtab==0 ? 'list_active0' : ''}} ">
+      <!--list-->
+      <view wx:if="{{currentNavtab==0}}" class="nav_section">
+        <view wx:if="{{orders.length>0}}">
+          <block wx:for="{{orders}}" wx:key="item.id">
+            <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <!--image-->
+              <view class="section_image">
+                <block >
+                  <image src="{{item.picurl}}" mode="aspectFill"></image>
+                </block>
+                <!-- <block wx:else>
+                  <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block> -->
+              </view>
+              <!--content-->
+              <view class="section_cont">
+                <view class="section_cont_sub">
+                  <text>{{item.name}}门票</text>
+                </view>
+                <view class="section_cont_price" style="color:#000">
+                  <text class="section_cont_price"> {{item.price}}</text>
+                </view>
+                <!-- <view>{{time}}</view> -->
+                <view>{{item.limited}}</view>
+              </view>
+              <!--book-->
+              <view class="section_book">
+                <view>{{item.amount}}张</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view wx:else>  
+        <image class='kong' src='../../images/zhanweitu.png'></image>
+        </view>
+      </view>
+
+
+      <!--list-->
+      <view wx:if="{{currentNavtab==2}}" class="nav_section">
+        <view wx:if="{{ischeck}}">
+          <block wx:for="{{ischeck}}" wx:key="item.id">
+            <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <!--image-->
+              <view class="section_image">
+                <block >
+                  <image src="{{item.picurl}}" mode="aspectFill"></image>
+                </block>
+                <!-- <block wx:else>
+                  <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block> -->
+              </view>
+              <!--content-->
+              <view class="section_cont">
+                <view class="section_cont_sub">
+                  <text>{{item.name}}门票</text>
+                </view>
+                <view class="section_cont_price" style="color:#000">
+                  <text class="section_cont_price"> {{item.price}}</text>
+                </view>
+                <!-- <view>{{time}}</view> -->
+                <view>{{item.limited}}</view>
+              </view>
+              <!--book-->
+              <view class="section_book">
+                <view>{{item.amount}}张</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view wx:else>暂无数据</view>
+      </view>
+
+
+    </view>
+  </scroll-view>
+</view>
+
+

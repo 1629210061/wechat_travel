@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="place-view">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-color="rgba(0, 0, 0, 0.1)" indicator-active-color="rgba(0, 0, 0, 0.6)">
+    <block wx:for="{{lb_images}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+
+  </swiper>
+  <view class="place_msg">
+    <text class="place_name">{{agritainment.name}}</text>
+    <text class="place_level">{{agritainment.score}}分</text>
+  </view>
+  <view class="tab">
+    <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">详情介绍</view>
+    <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">路线指导</view>
+  </view>
+  <view class="details" wx:if="{{currentTab==0}}">
+    <view class="parameter-data">
+      <view class="parameter-item">
+        <text class="parameter_name">地址</text>
+        <text class="parameter_val" decode="{{true}}">{{agritainment.address}}</text>
+      </view>
+      <view class="parameter-item">
+        <text class="parameter_name">售价</text>
+        <text class="parameter_val" decode="{{true}}">单人：{{agritainment.price}}元</text>
+      </view>
+      <view class="parameter-item">
+        <text class="parameter_name">开放时间</text>
+        <text class="parameter_val" decode="{{true}}">{{agritainment.time}}</text>
+      </view>
+      <view class="parameter-item">
+        <text class="parameter_name">联系电话</text>
+        <text class="parameter_val" decode="{{true}}">{{agritainment.tel}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="parameter" wx:if="{{currentTab==1}}">
+    <block >
+      <image class="details-img" bindtap='click' src="{{agritainment.traffic_images}}" mode="widthFix"></image>
+    </block>
+  </view>
+  <view class="footer">
+    <button class="collect" size="mini" bindtap="collect">收藏</button>
+    <button class="buy" size="mini" bindtap="buy">预定</button>
+  </view>
+</view>
+
+<view wx:if="{{showSpecMenu}}" class="spec-menu">
+  <view class="spec-menu-top">
+    <view class="spec-pic-content">
+      <image src="{{agritainment.fm_images}}" class="spec-pic"  mode="aspectFill"></image>
+    </view>
+    <button class="spec-menu-close" bindtap="hideSpecMenu">
+      <icon type="clear" color="#ddd" />
+    </button>
+    <view class="spec-summary">
+      <text class="name">{{agritainment.name}}单人份</text>
+      <view class="spec-price">￥{{agritainment.price}}</view>
+
+    </view>
+  </view>
+  <view class="spec-menu-top1">
+    <view class="spec-menu-middle">
+      <view class="quantity-wrapper">
+        <text>选择日期</text>
+        <!-- <input type="text" value='{{acoumt}}'/> -->
+        <view class="section">
+          <picker mode="date" value="{{selectdate}}" start="{{startdate}}" end="{{enddate}}" bindchange="bindDateChange">
+            <view class="picker">
+              当前选择: {{selectdate}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="spec-menu-middle">
+    <view class="quantity-wrapper">
+      <text>购买数量</text>
+      <view class="quantity-btn">
+        <button bindtap='sub'>-</button>
+        <input type="text" value='{{amount}}' />
+        <button bindtap='add'>+</button>
+      </view>
+    </view>
+  </view>
+  <view class="spec-menu-bottom">
+    <button bindtap='submit'>确定</button>
+  </view>
+</view>

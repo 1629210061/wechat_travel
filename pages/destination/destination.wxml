@@ -1,0 +1,38 @@
+
+<!--pages/destination/destination.wxml-->
+<view class="top">
+  <view class="bg">
+  </view>
+  <view class="img">
+    <image src="http://47.100.19.206/images/bg.png"></image>
+  </view>
+  <view class="pos">
+    <text>{{city}}</text>
+    <text class="icon"> </text>
+  </view>
+  <view class="search">
+    <input type="text" placeholder="搜索目的地/景点等..." placeholder-class="placeholderClass" bindinput='getname' value=''/>
+    <icon class="icon" size='20' type='search' ></icon>
+  </view>
+</view>
+<view class="divider"></view>
+
+<view class="hot-view hot">
+  <view class="title">
+    <text></text>
+    <text>该区景点</text>
+    <text></text>
+  </view>
+  <view class="jg"></view>
+    <view class="view-box">
+    <view class="view" wx:if="{{length>0}}">
+      <view class="img" wx:for="{{allview}}"  wx:key="{{index}}" bindtap="enterDetail" data-cnname="{{item.cn_name}}">
+        <text class="title">{{item.cn_name}}</text>
+        <image src="{{item.picurl}}"></image>
+      </view>
+    </view>
+    <view wx:if="{{length<=0}}" class='textbox'>
+      <text class='text'>暂无无相关信息</text>
+    </view>
+  </view>
+</view>

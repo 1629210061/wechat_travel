@@ -1,0 +1,42 @@
+<!--pages/tripdst/tripdst.wxml-->
+
+<view class="hot-view hot">
+  <view class="title">
+    <view class="img-box">
+        
+        <view class="img2" >
+          <image src="http://localhost:8080/images/hz.png"></image>
+
+        </view>
+      </view>
+    <view class="img-box">
+        <view class="img"  bindtap="situation"  >
+          <image src="http://localhost:8080/images/mdd/hangzhou.jpg"></image>
+          <text>地域概况</text>
+        </view>
+
+        <view class="img"  bindtap="minsu" >
+          <image src="http://localhost:8080/images/mdd/minsu.jpg"></image>
+          <text>民俗风情</text>
+        </view>
+        <view class="img"  bindtap="news" >
+          <image src="http://localhost:8080/images/mdd/new.jpg"></image>
+          <text>专题新闻</text>
+        </view>
+        <view class="img"  bindtap="yanchu" >
+          <image src="http://localhost:8080/images/mdd/yanchu.jpg"></image>
+          <text>演出庆祝</text>
+        </view>
+        <view class="img1"  bindtap="story" >
+          <image src="http://localhost:8080/images/mdd/history.jpg"></image>
+          <text>历史故事</text>
+        </view>
+
+
+
+      </view>
+    
+      
+    </view>
+</view>
+

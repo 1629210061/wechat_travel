@@ -1,0 +1,211 @@
+/* pages/orderManage/orderDeatail.wxss */
+/*commomStyle*/
+page{
+    background-color:#f5f5f5;
+}
+
+.blockItem {
+    display: block;
+}
+
+.flexItem {
+    display: flex;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.columnStyle {
+    flex-direction: column;
+}
+
+.rowStyle {
+    flex-direction: row;
+}
+
+.heightAndWidth {
+    height: auto;
+    width: 100%;
+}
+
+.centers {
+    justify-content: center;
+    align-items: center;
+}
+
+.color54 {
+  color: #545454;
+}
+
+.color7321 {
+    color: #ed7321;
+}
+
+.fontSize10 {
+    font-size: 10px;
+}
+.fontSize11{
+  font-size: 23px;
+  font-family: "微软雅黑";
+  font-weight: 900;
+  margin-left: 20px;
+}
+
+.fontSize12 {
+    font-size: 12px;
+}
+.fontSize13{
+  font-size: 20px;
+}
+.fontSize14 {
+    font-size: 16px;
+}
+
+.marginTop10 {
+    margin-top: 10px;
+}
+
+.marginLeft12 {
+    margin-left: 12px;
+}
+
+.marginRight12 {
+    margin-right: 12px;
+}
+
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
+/*diffStyle*/
+.container {
+    padding: 0;
+    height: 100%;
+}
+
+.menu {
+    background-color: white;
+}
+
+.orderMenu {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.line {
+    width: 36px;
+    height: 2px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-left: 6px;
+    background-color: #ed7321;
+}
+
+.orderImage {
+    width: 10px;
+    height: 11px;
+    margin-right: 5px;
+}
+
+.tableViewCellHeader {
+    height: 35px;
+    align-items: center;
+    border-bottom: solid #ccc 1px;
+    background-color: white;
+}
+
+.tableViewCell {
+    padding-right: 12px;
+    padding-top: 15px;
+    padding-left: 12px;
+    background-color: white;
+    border-bottom: dashed #ccc 1px;
+}
+
+tableViewCellStyle {
+    background-color: white;
+}
+
+.cellStyle {
+    justify-content: space-between;
+    align-items: center;
+    color: #ed7321;
+}
+
+.personInfo {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: dashed #ccc 1px;
+}
+
+.userHeader {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.call {
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    margin-right: 5px;
+}
+
+.orderStatus {
+    width: 100%;
+    height: 44px;
+    background-color: white;
+}
+.orderStatus1 {
+    width: 100%;
+    height: 180px;
+    background-color: white;
+}
+
+.orderStatus2 {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+.statusImage {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+.statusImage1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    margin-left: 120px;
+}
+
+.statusText {
+    color: #999;
+    margin-left: 100px;
+}
+.statusText1 {
+    color: #000;
+    font-family: "微软雅黑";
+    margin-top: 10px;
+    font-weight: 800
+}
+.tableViewX {
+    width: 100%;
+    height: auto;
+}
+
+.canvas {
+    margin: 25rpx auto;
+}

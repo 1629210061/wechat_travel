@@ -1,0 +1,32 @@
+<!--index.wxml-->
+
+
+<view class="big-logo">
+    <block wx:for-items="{{logos1}}">
+        <view class="logoinfo" bindtap='onItdcClick' data-logo-Type="{{item.id}}">
+            <image style="width:70rpx; height: 70rpx;" src="{{item.image}}" 
+            mode="aspectFit" />
+            <text class="logotext">{{item.title}}</text>
+        </view>
+    </block>
+</view>
+
+<view class="big-logo1">
+    <block wx:for-items="{{logos2}}">
+        <view class="logoinfo" bindtap='onItdcClick' data-logo-Type="{{item.id}}">
+            <image style="width:70rpx; height: 70rpx;" src="{{item.image}}" 
+            mode="aspectFit" />
+            <text class="logotext">{{item.title}}</text>
+        </view>
+    </block>
+</view>
+
+<view class="big-logo1">
+    <block wx:for-items="{{logos3}}">
+        <view class="logoinfo" bindtap='onItdcClick' data-logo-Type="{{item.id}}">
+            <image style="width:70rpx; height: 70rpx;" src="{{item.image}}" 
+            mode="aspectFit" />
+            <text class="logotext">{{item.title}}</text>
+        </view>
+    </block>
+</view>

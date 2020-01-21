@@ -1,0 +1,51 @@
+/* pages/parking/parking.wxss */
+
+
+.map{
+  width:100%;
+  height:356px;
+  margin: 0 auto;
+}
+.parking{
+  background-color:#fafafa;
+  width: 100%;
+  height: 215px;
+}
+.parking-list-item{
+  display: flex;
+}
+.plain-text{
+  font-size: 12px;
+  color:  	#969696;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.parking-list-container{
+  margin-top: 10px;
+  background-color: #fff;
+  width: 100%;
+  height: 80px;
+}
+.parking-name{
+  margin: 10px 0 10px 10px;
+  font-size: 15px;
+  font-weight: 550;
+
+}
+
+.parking-last{
+   margin: 0 10px 10px;
+  font-size: 12px;
+  color: #969696
+}
+.number{
+  font-size: 12px;
+  color: red;
+  font-weight: 500;
+}
+.meter{
+  font-size: 12px;
+  margin-left: 150px;
+  margin-top: 20px;
+}

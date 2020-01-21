@@ -1,0 +1,17 @@
+<view class='container_que'>
+  <view class='head'>常见问题解答</view>
+
+  <block wx:for="{{question}}" wx:key="item">
+    <view class='que_itme' bindtap='onChangeShowState' data-index="{{index}}">
+      <view class='title'>
+        <image style="{{index==id?'color:#8B008B':'color:gray'}}" class='qa' src="/images/icon-q.png"></image>{{item.title}}</view>
+      <view wx:if="{{index==id}}">
+        <view class="hide{{showView?'show':''}}">
+          <view class='content'>
+            <image class='qa' src="/images/icon-a.png"></image>{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>

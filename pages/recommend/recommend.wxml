@@ -1,0 +1,19 @@
+<view class="hot-view hot">
+  <view class="title">
+    <text></text>
+    <text>推荐景点</text>
+    <text></text>
+  </view>
+  <view class="jg"></view>
+    <view class="view-box">
+    <view class="view" wx:if="{{length>0}}">
+      <view class="img" wx:for="{{allview}}"  wx:key="{{index}}" bindtap="enterDetail" data-cnname="{{item.cn_name}}">
+        <text class="title">{{item.cn_name}}</text>
+        <image src="{{item.picurl}}"></image>
+      </view>
+    </view>
+    <view wx:if="{{length<=0}}" class='textbox'>
+      <text class='text'>暂无无相关信息</text>
+    </view>
+  </view>
+</view>

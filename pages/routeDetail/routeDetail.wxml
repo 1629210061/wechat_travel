@@ -1,0 +1,18 @@
+<!--pages/route/route.wxml-->
+<view class='wrap'>
+  <view class='line'>
+    <view class='head'>{{route.name}}</view>
+    <view class='days-season'>游玩时间：{{route.last_time}}
+      <view class='divide'> </view>
+      {{route.season}}</view>
+    <view wx:for="{{introduce}}">
+      <view class='day-num'>D{{index+1}}</view>
+      <view class='intro'>{{item}}</view>
+       <view class='day-line'>{{route1[index]}}</view>
+      <image src="{{pic[index]}}" mode='widthFix'></image>
+      <view class='fg-h'></view>
+    </view>
+
+  </view> 
+
+</view>

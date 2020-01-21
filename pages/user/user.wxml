@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view class="info_list">
+    <block>
+      <view class="weui_cell" bindtap='orders'>
+        <view class="weui_cell_hd">
+          <image src="../../images/user/iconfont-dingdan.png"></image>
+        </view>
+        <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p"> 我的订单 </view>
+        </view>
+        <!-- <view wx:if="true" class="badge">2</view> -->
+        <image class="with_arrow" src="/images/user/icon-arrowdown.png"></image>
+      </view>
+
+       <view class="weui_cell" bindtap='youhuijuan'>
+        <view class="weui_cell_hd">
+          <image src="../../images/user/iconfont-card.png"></image>
+        </view>
+        <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p">我的优惠券</view>
+        </view>
+        <!-- <view wx:if="true" class="badge">2</view> -->
+        <image class="with_arrow" src="/images/user/icon-arrowdown.png"></image>
+      </view>
+
+
+      <view class="weui_cell" bindtap='collects'>
+        <view class="weui_cell_hd">
+          <image src="../../images/user/iconfont-shoucang.png"></image>
+        </view>
+        <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p"> 我的收藏 </view>
+        </view>
+        <!-- <view wx:if="true" class="badge">2</view> -->
+        <image class="with_arrow" src="/images/user/icon-arrowdown.png"></image>
+      </view>
+
+      <view class="weui_cell" bindtap='question'>
+        <view class="weui_cell_hd">
+          <image src="../../images/user/iconfont-help.png"></image>
+        </view>
+        <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p"> 常见问题 </view>
+        </view>
+        <image class="with_arrow" src="/images/user/icon-arrowdown.png"></image>
+      </view>
+
+      
+      <view class="weui_cell" >
+        <view class="weui_cell_hd">
+          <image src="../../images/people.png"></image>
+        </view>
+        <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p"> 联系客服 </view>
+           <button class="cs_button" open-type="contact" session-from="weapp">
+           </button>
+        </view>
+        <image class="with_arrow" src="/images/user/icon-arrowdown.png"></image>
+      </view>
+
+
+    </block>
+  </view>
+</view>

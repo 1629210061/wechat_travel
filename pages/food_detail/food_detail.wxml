@@ -1,0 +1,86 @@
+
+<view id="merchantBox" class="merchantBox">
+  <view class="shopTop">
+    <view class='detailsWrap'>
+      <view class="img_shade" bindtap='previewImg'></view>
+      <view class="totalPhoto">共{{detail_pic.length}}张</view>
+      <image class='cateImages' mode="aspectFill" src='{{detail_pic[0]}}'></image>
+    </view>
+    <!-- 详细信息 -->
+    <view class="shopInfo">
+      <view class="shopInfo_inner">
+        <view class="shopInfo_shade"></view>
+        <view class='shop-z-Wrap'>
+          <view class='detailsName-genre'>
+            <view class="details-NameBox">
+              <text class='details-Name'>{{food.name}}</text>
+              <image wx:if="{{isCollected}}" src="/images/yellowstar.png" catchtap="cancelCollect"></image>
+              <image wx:else src="/images/blackstar.png" catchtap="onCollect"></image>
+            </view>
+            
+            <view class='details-form'>
+              <image src="/images/hot.png"></image>
+              <text class="details-hotNum">评分：{{food.score}}</text>
+              <text  wx:key="{{index}}" data-idx="{{index}}" class="details-type">{{food.price}}</text>
+            </view>
+            <view class='details-form1'>
+             <image class='time' src="/images/time.png"></image>
+              <text class="details-type1">{{food.time}}</text>
+            </view>
+            <view class='comment'>
+              <view wx:for="{{comment}}"  class="details-addition">
+                <text wx:key="{{index}}" data-idx="{{index}}">{{item}}</text>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+        <view class='locationWrap'>
+          <view>
+            <image class='location-left' src='/images/location1.png'></image>
+            <text class='location-text' catchtap='TencentMap'>{{food.address}}</text>
+          </view>
+          <view class="locationWrap_phone">
+            <image class='location-right' bindtap="calling" src='/images/greenphone.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 螃蟹活动 -->
+  <view class='crabSection' catchtap='crabSection'>
+    <image class='crabSection-image' src='https://xqmp4-1256079679.file.myqcloud.com/Colin_crabSection-image.png'></image>
+  </view>
+
+
+  <view class='homepage'>
+
+    <!-- 推荐菜 -->
+    <view class='initiate-wrapp'  >
+      <view class='initiate-exhibition'>
+        <view>      
+          <text class='initiate-left'></text>
+          <text class='initiate-text'>推荐菜</text>
+        </view>
+      </view>
+      <view  class='scroll_box' >
+       <scroll-view scroll-x="true"> 
+        <view class="uploadWrap" scroll-x="true" > 
+          <view class="upload_Item" wx:for="{{recommend_pic}}" wx:key="id"> 
+            <image class="upload_Item_img" src="{{item}}"></image> 
+            <view class='recommend'>{{recommend[index]}}</view>
+          </view> 
+        </view> 
+      </scroll-view> 
+        <view class="setMealMore" catchtap='recommendedRestaurant' hidden="{{recommend_list.length < 3}}">
+          <text>查看更多</text>
+          <image src="/images/restaurant_arrow.png"></image>
+        </view>
+      </view>
+
+    </view >
+  </view>
+</view>
+
+

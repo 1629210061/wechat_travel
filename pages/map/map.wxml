@@ -1,0 +1,21 @@
+<!--pages/map/map.wxml-->
+<map
+  id="map"
+  longitude="120.1250680000"
+  latitude="30.2253630000"
+  scale="15"
+  controls="{{controls}}"
+  bindcontroltap="controltap"
+  markers="{{markers}}"
+  bindmarkertap="markertap"
+  polyline="{{polyline}}"
+  bindregionchange="regionchange"
+  show-location
+  style="width: 100%; height: 570px;"
+
+>
+<!-- <view bindtap="includePoints">
+  <image src='../../images/loc.png'  style="width: 80px; height:80px;" ></image>
+</view> -->
+<!-- <button style="width: 80px; height:80px;" bindtap="includePoints">fgfdhg</button> -->
+</map>

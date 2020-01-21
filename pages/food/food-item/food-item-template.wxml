@@ -1,0 +1,42 @@
+<template name="tpeMerchant">
+  <view class='shopWrap' id="{{item.id}}" catchtap="onTouchItem">
+    <view class='navigationPractical'>
+      <view class='practical_left1'>
+        <image class='practicalImg' mode="aspectFill" src="{{item.fm_pic}}"></image>
+      </view>
+      <view class='practical_right1'>
+        <view class='elsk'>
+          <text class='trade_name'>{{item.name}}</text>
+        </view>
+        <view class='trade_site_distance'>
+          <view class='dq_popularitywrap'>
+            <view class='dq_popularity_sKu'>
+              <image class='dq_popularity' src='/images/hot.png'></image>
+              <text class='trade_rq'>评分:<text class='trade_figure'>{{item.score}}</text></text>
+              <view class='returnes'>
+                <text class="dq_popularity_meal">{{item.price}}</text>
+              </view>
+            </view>
+            <view class='trade_site_lxg'>
+              <image class='trade_site_images' src="/images/womendzbq.png"></image>
+              <text>{{item.area}}</text>
+            </view>
+          </view>
+          <!-- <view wx:for="{{item.comment.split('&')}}" wx:for-item="comment">
+
+            <text class='trade_caim1' >{{comment}}</text>
+          </view> -->
+        </view>
+        <view class='navigationKb_right' >
+  
+          <view class='navigationKb_Wrapp'>
+            <image class='navigationKb_img' src='/images/restaurant_ticket.png'></image>
+            <text class='navigationKb_text navigationQdis'>满100减10</text>
+          </view>
+       
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>

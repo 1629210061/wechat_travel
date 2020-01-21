@@ -1,0 +1,50 @@
+/* pages/question/questionn.wxss */
+
+.container_que {
+  font: 14px/1.5 tahoma,
+          arial,
+          'Hiragino Sans GB',
+          "Microsoft YaHei",
+          "\5FAE\8F6F\96C5\9ED1";
+}
+
+.head {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 20px;
+}
+
+.que_itme {
+  width: 690rpx;
+  padding: 30rpx 30rpx 20rpx;
+  margin: 7rpx 0 6rpx 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eee;
+}
+
+.title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.qa {
+  top: 18px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-right: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

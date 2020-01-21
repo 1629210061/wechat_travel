@@ -1,0 +1,22 @@
+<view   class="container">
+ 
+  <!--content-wrapper-->
+  <view class="content-wrapper">
+    <view >
+      <view class="masonry">
+        <view  wx:for="{{stories}}"  class="item-wrapper">
+          <navigator url="../newsdetail/newsdetail?id={{item.id}}">
+            <image class="img" mode="scaleToFill" src="{{item.fm_url}}"></image>
+            <view class="info">
+              <text class="name">{{item.title}}</text>
+
+   
+            </view>
+          </navigator>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  
+</view>

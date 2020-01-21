@@ -1,0 +1,53 @@
+<!--technician.wxml-->
+
+<view class="container">
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+  <!--category picker-->
+  <!-- <view class="ar_picker" style="background:#fff">
+    <view class="ar_picker_wrap">
+        <picker bindchange="bindCasPickerChange" value="{{casIndex}}" range="{{casArray}}">
+            <view>
+                <text>{{casArray[casIndex]}}</text>
+            </view>
+        </picker>
+    </view>
+  </view> -->
+
+
+  <!--list-->
+  <view class="nav_section">
+    <view wx:if="{{guides}}">
+        <block wx:for="{{guides}}" wx:key="item.id">
+            <view class="nav_section_items" bindtap="navigateDetail" data-id="{{item.id}}">
+                <!--image-->
+                <view class="section_image" >
+                <block wx:if="{{item.headimage}}">
+                    <image src="{{item.headimage}}" mode="aspectFill"></image>
+                </block>
+                <block wx:else>
+                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont" >
+                    <view class="section_cont_sub">
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view class="section_cont_price" style="color:#000">擅长语言：{{item.language}}<text class="section_cont_price">  {{item.price}}</text></view>
+                    <view class='speciality'>专长：{{item.speciality}}</view>
+                </view>
+                <!--book-->
+                <view class="section_book" >
+                        <!-- <text>从业\n{{item.seniority}}</text> -->
+                </view>
+            </view>
+            
+        </block>
+    </view>
+    
+    <view wx:else>暂无数据</view>
+          
+</view>
+
+</scroll-view>
+</view>

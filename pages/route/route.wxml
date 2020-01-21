@@ -1,0 +1,26 @@
+<view class="container">
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore">
+    <!--list-->
+    <view class="nav_section">
+      <view wx:if="{{routes}}">
+        <block wx:for="{{routes}}" wx:key="item.id">
+          <view class="nav_section_items" bindtap="navigateDetail" data-id="{{item.id}}">
+            <!--image-->
+            <view class="section_image">
+              <block>
+                <image src="{{item.fm_image}}" mode="aspectFill"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont">
+              <view class="section_cont_sub">
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:else>暂无数据</view>
+    </view>
+  </scroll-view>
+</view>

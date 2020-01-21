@@ -1,0 +1,24 @@
+<!--pages/newstdetail/newsdetail.wxml-->
+
+<view class="container">
+  <view class="scroll-view">
+    <!--info-wrapper-->
+    <view class="info-wrapper">
+      <text class="title">{{list.title}}</text>
+      <view class="other-wrapper">
+        <text class="txt">{{list.author}}</text>
+        <text class="txt">{{list.date}}</text>
+      </view>
+    </view>
+    <!--content-wrapper-->
+    <view class="content-wrapper">
+     <text class='content'>{{list.content}}</text>
+     <view wx:for="{{picurl}}" >
+    <image class='img' src="{{item}}"></image>
+    </view>
+    </view>
+    
+    <!--comment-wrapper-->
+    
+  </view>
+</view>

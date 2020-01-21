@@ -1,0 +1,74 @@
+<!--index.wxml-->
+
+
+<view class='index-body'>
+  <!-- <view class="search" >
+    <image class="search_logo" src="../../images/novel_new_search_icon.png"/>
+     <input class="search_input" bindchange="bindInputChange" bindFocus="bindFocusStyle" placeholder="搜索"/>  
+  </view> -->
+
+<view style="width: 100%; height: auto; margin-bottom:10px;">
+  <swiper class="swiper" autoplay="true" interval="5000" duration="1000" indicator-color="#e8e8e8" indicator-active-color="#a9dd3c">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="big-logo">
+
+    <block wx:for-items="{{logos1}}">
+        <view class="logoinfo" bindtap='onItdcClick' data-logo-Type="{{item.id}}">
+            <image style="width:70rpx; height: 70rpx;" src="{{item.image}}" 
+            mode="aspectFit" />
+
+            <text class="logotext">{{item.title}}</text>
+        </view>
+    </block>
+</view>
+
+<view class="big-logo1">
+
+    <block wx:for-items="{{logos2}}">
+        <view class="logoinfo" bindtap='onItdcClick' data-logo-Type="{{item.id}}">
+            <image style="width:70rpx; height: 70rpx;" src="{{item.image}}" 
+            mode="aspectFit" />
+
+            <text class="logotext">{{item.title}}</text>
+        </view>
+    </block>
+</view>
+<view class="big-logo1">
+
+    <block wx:for-items="{{logos3}}">
+        <view class="logoinfo" bindtap='onItdcClick' data-logo-Type="{{item.id}}">
+            <image style="width:70rpx; height: 70rpx;" src="{{item.image}}" 
+            mode="aspectFit" />
+
+            <text class="logotext">{{item.title}}</text>
+        </view>
+    </block>
+</view>
+
+
+
+<view class="hot-view hot">
+  <view class="title">
+    <text></text>
+    <text>热门景点</text>
+    <text></text>
+  </view>
+  <view class="img-box">
+    <view class="img" wx:for="{{attras}}" wx:key="{{index}}" bindtap="enterDetail" data-cnname='{{item.cn_name}}' >
+      <image src="{{item.picurl}}"></image>
+      <text>{{item.cn_name}}</text>
+    </view>
+  </view>
+</view>
+  
+</view>
+
+
+  
+

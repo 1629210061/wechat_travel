@@ -1,0 +1,178 @@
+<!--index.wxml-->
+
+
+
+<view class="place-view">
+  <swiper bindtap="gotovideo" class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-color="rgba(0, 0, 0, 0.1)" indicator-active-color="rgba(0, 0, 0, 0.6)">
+    <block wx:for="{{lb_pictures}}" >
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="place_msg">
+    <view class="place_name">
+    {{cn_name}}
+    <image class='eyeimg' src='../../images/eye.png' bindtap='panorama'></image>
+    </view>
+    <text class="place_enname">{{eg_name}}</text>
+    <text class="place_level">{{level}}</text>
+  </view>
+  <view class="tab">
+    <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">景点介绍</view>
+    <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">路线指导</view>
+     <view class="tab-item {{currentTab==2?'tab-active' : ''}}" data-current="2" bindtap="tab">评论</view>
+  </view>
+  <view class="details" wx:if="{{currentTab==0}}">
+    <view wx:if="{{introduce==''}}" class="no-parameter">该景点没有详细介绍</view>
+    <view class="place_introduction">{{introduce}}</view>
+    <view class="parameter-data">
+      <view class="parameter-item">
+        <text class="parameter_name">地址</text>
+        <text class="parameter_val" decode="{{true}}">{{address}}</text>
+      </view>
+      <view class="parameter-item">
+        <text class="parameter_name">门票</text>
+        <text class="parameter_val" decode="{{true}}">{{ticket}}</text>
+
+      </view>
+      <view class="parameter-item">
+        <text class="parameter_name">开放时间</text>
+        <text class="parameter_val" decode="{{true}}">{{open_time}}</text>
+
+      </view>
+      <view class="parameter-item">
+        <text class="parameter_name">电话</text>
+        <text class="parameter_val" decode="{{true}}">{{telephone}}</text>
+
+      </view>
+
+
+
+    </view>
+    <block wx:for="{{dt_pictures}}">
+      <image class="details-img" src="{{item}}" mode="widthFix"></image>
+    </block>
+  </view>
+
+  <view class="parameter" wx:if="{{currentTab==1}}">
+    <view class="place_introduction">景区路线指导：{{traffic}}</view>
+    <block wx:for="{{traffic_pic}}">
+      <image class="details-img"  bindtap='click' src="{{item}}" mode="widthFix"></image>
+    </block>
+    <view class="place_introduction">
+    <text>厕所信息（点击查看地图）</text>
+    <image class="wcimf"  src="../../images/wc.png" bindtap='gotomap' mode="widthFix"></image>
+    </view>
+
+    <view class="place_introduction">
+    <text>附近停车位（点击查看地图）</text>
+    <image class="wcimf"  src="../../images/parking.png" bindtap='gotoparking' mode="widthFix"></image>
+    </view>
+  </view>
+
+  <view class="parameter" wx:if="{{currentTab==2}}">
+    
+    <block wx:for="{{comments}}">
+      <view class="feed-item">
+        <view class="feed-source">
+          <a class="">
+            <view class="avatar">
+              <image src="{{item.avatraurl}}"></image>
+            </view>
+            <text>{{item.nickname}}</text>
+          </a>
+          <image class="item-more" mode="aspectFit" src=""></image>
+        </view>
+        <view class="feed-content">  
+          <view class="answer-body">
+            <view bindtap="bindItemTap" data-id="{{item.id}}">
+              <text class="answer-txt" aid="{{method_id}}">{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+        
+        <view wx:for="{{tools.split(item.images)}}" class="imagelist">
+          <image class="images" src = "{{item}}"></image>
+          <!-- <text>{{tools.split(item.images)}}</text> -->
+        </view>
+
+      </view>
+
+    </block>
+
+  </view>
+
+  <button class="kf_button" open-type="contact" session-from="weapp">
+  <image class="kf_image" src="../../images/kefu.png"></image>
+  </button>
+  <view class="footer">
+ <view class='icon' bindtap='comment'>
+      <image src='/images/comment.png' style='width:20px;height:17px;'></image>
+      <text>评论</text>
+    </view>
+    <button class="collect" size="mini" bindtap="collect">收藏</button>
+    <button class="buy" size="mini" bindtap="buy">购买门票</button>
+
+  </view>
+</view>
+
+<view wx:if="{{showcomment}}" class="modal">
+  <view  class="spec-menu" >
+    <view class='text'>
+    <view class='cancel' bindtap='closemodal'>取消</view>
+    <view class='confirm' bindtap='post'>确定</view>
+    </view> 
+    <view class='content' style="margin-bottom:{{bottom}}px">
+      <textarea class='textarea' value='{{content}}'  bindinput='bindinput' placeholder=""   bindfocus="inputFocus" bindblur="inputBlur"  adjust-position="true"> </textarea>
+    </view>
+  </view>
+
+</view>
+
+  
+
+<view wx:if="{{showSpecMenu}}" class="spec-menu">
+  <view class="spec-menu-top">
+    <view class="spec-pic-content">
+      <image src="{{dt_pictures[0]}}" class="spec-pic"></image>
+    </view>
+    <button class="spec-menu-close" bindtap="hideSpecMenu">
+      <icon type="clear" color="#ddd" />
+    </button>
+    <view class="spec-summary">
+      <text class="name">{{cn_name}}</text>
+      <view class="spec-price">{{ticket_price}}</view>
+
+    </view>
+  </view>
+  <view class="spec-menu-top1">
+    <view class="spec-menu-middle">
+      <view class="quantity-wrapper">
+        <text>选择日期</text>
+        <!-- <input type="text" value='{{acoumt}}'/> -->
+        <view class="section">
+
+          <picker mode="date" value="{{selectdate}}" start="{{startdate}}" end="{{enddate}}" bindchange="bindDateChange">
+            <view class="picker">
+              当前选择: {{selectdate}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="spec-menu-middle">
+    <view class="quantity-wrapper">
+      <text>购买数量</text>
+      <view class="quantity-btn">
+        <button bindtap='sub'>-</button>
+        <input type="text" value='{{amount}}' />
+        <button bindtap='add'>+</button>
+      </view>
+    </view>
+  </view>
+  <view class="spec-menu-bottom">
+    <button bindtap='submit'>确定</button>
+  </view>
+</view>

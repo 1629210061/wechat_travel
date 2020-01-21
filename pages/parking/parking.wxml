@@ -1,0 +1,60 @@
+<!--pages/parking/parking.wxml-->
+
+<map id="map" longitude="120.1250680000" latitude="30.2253630000" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location class="map"></map>
+<view class="parking"> 
+  <text class="plain-text">在您附近找到3家智能停车场</text>
+  <scroll-view scroll-y="true" style="height: 196px">
+
+  <view class="parking-list-container" bindtap='openParkingMap'> 
+    <view class="parking-list-item">
+      <view class="parking-name">元华地下车库</view>
+       <view class="meter">345m</view>
+    </view>
+    <view class="parking-list-item">
+      <view class="parking-last">剩余车位:</view>
+      <view class="number">11</view>
+    </view>
+  </view>
+
+  <view class="parking-list-container"> 
+    <view class="parking-list-item">
+      <view class="parking-name">庆春路家友地下车库</view>
+       <view class="meter">900m</view>
+    </view>
+    <view class="parking-list-item">
+      <view class="parking-last">剩余车位:</view>
+      <view class="number">23</view>
+    </view>
+  </view>
+  <view class="parking-list-container"> 
+    <view class="parking-list-item">
+      <view class="parking-name">
+
+    杭州青荇装饰停车场</view>
+       <view class="meter">336m</view>
+    </view>
+    <view class="parking-list-item">
+      <view class="parking-last">剩余车位:</view>
+      <view class="number">35</view>
+    </view>
+  </view>
+
+
+
+</scroll-view>
+
+</view>
+
+<!-- 
+<view class="menu-annotation">更多</view>
+<view class="menu-list-container center">
+  <view class="menu-list-item">
+    <image src="/images/icon/day_view.png" class="menu-list-icon"></image>
+    <view class="menu-list-text">查看全部</view>
+    <image class="menu-arrow-right" src="/images/arrowright.png"></image>
+  </view>
+  <view class="bottom-btn plain u-auto" style="" bindtap="openParkingMap">
+    <image class="button-icon" src="/images/icon/location.png"></image>
+    查看车辆位置
+  </view>
+</view> -->

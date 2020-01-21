@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" class="container" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower">
+
+  <block wx:for="{{strategies}}">
+    <view class="feed-item">
+      <view class="feed-source">
+        <a class="">
+          <view class="avatar">
+            <image src="{{item.avatarurl}}"></image>
+          </view>
+          <text>{{item.nickname}}</text>
+        </a>
+        <image class="item-more" mode="aspectFit" src=""></image>
+      </view>
+      <view class="feed-content">
+        <view class="question">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="answer-body">
+          <view bindtap="bindItemTap" data-id="{{item.id}}">
+            <text class="answer-txt" aid="{{method_id}}">{{item.content}}</text>
+          </view>
+        </view>
+        <view class="answer-actions" bindtap="bindItemTap">
+          <view class="like dot">
+            <a>{{item.agree}} 赞同 </a>
+          </view>
+          <view class="comments dot">
+            <a>评{{item.comment}} 评论 </a>
+          </view>
+          <view class="follow-it">
+            <a>关注攻略</a>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </block>
+  <view class="add-wrap" hover-class="plus-hover" bindtap='add'>
+    <image src="../../images/add.png"></image>
+  </view>
+</scroll-view>

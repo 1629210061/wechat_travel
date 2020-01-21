@@ -1,0 +1,34 @@
+<view class="container">
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore">
+    <!--list-->
+    <view class="nav_section">
+      <view wx:if="{{agritainments}}">
+        <block wx:for="{{agritainments}}" wx:key="item.id">
+          <view class="nav_section_items" bindtap="navigateDetail" data-id="{{item.id}}">
+            <!--image-->
+            <view class="section_image">
+              <block>
+                <image src="{{item.fm_images}}" mode="aspectFill"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont">
+              <view class="section_cont_sub">
+                <text>{{item.name}}</text>
+              </view>
+              <view>
+                <image class='icon_here' src='../../images/here1.png'></image>
+                <text>{{item.address}}</text>
+              </view>
+            </view>
+            <!--book-->
+            <view class="section_book">
+              <view>￥{{item.price}}起</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:else>暂无数据</view>
+    </view>
+  </scroll-view>
+</view>

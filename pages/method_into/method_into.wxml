@@ -1,0 +1,30 @@
+<!--answer.wxml-->
+<view class="container">
+  <view class="question">
+    <text class="question-title">{{strategy.title}}</text>
+  </view>
+  <view class="answerer-wrp">
+    <view class="bg-half"></view>
+    <view class="answerer flex-wrp">
+      <view class="avatar flex-item">
+        <image src="{{strategy.avatarurl}}"></image>
+      </view>
+      <view class="answerer-info flex-item">
+        <text class="answerer-des">作者：</text>
+        <text class="answerer-name">{{strategy.nickname}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="answer-content">
+    <text>
+    {{strategy.content}}
+    </text>
+
+    <view wx:for="{{imgurls}}">
+      <image src="{{item}}"></image>
+    </view>
+
+  </view>
+
+
+</view>

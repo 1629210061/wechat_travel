@@ -1,0 +1,62 @@
+/* pages/collect/collect.wxss */
+
+.container {
+  padding: 0;
+}
+
+.nav_section_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #ddd;
+  position: relative;
+
+}
+
+.nav_section_items .section_image {
+  width: 170rpx;
+  height: 158rpx;
+}
+
+.nav_section_items .section_image image {
+  width: 100%;
+  height: 100%;
+}
+
+.section_cont {
+  width: 380rpx;
+  font-size: 26rpx;
+  color: #a9a9a9;
+}
+
+.section_cont view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.section_cont .section_cont_sub {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+
+.section_cont .section_cont_sub text{
+  margin-left: 30px;
+}
+
+.kong{
+  margin-top: 260px;
+  width: 220px;
+  height: 180px;
+}
+
+.img{
+  width: 20px;
+  height: 20px;
+  margin-left: 170px;
+  margin-top: 25px;
+}

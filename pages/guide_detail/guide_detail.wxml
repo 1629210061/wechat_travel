@@ -1,0 +1,50 @@
+<view class="container">
+<view class="ar_coverpath">
+    <image src="{{guide.picurl}}" mode="aspectFill"></image>
+</view>
+<view class="ar_cont">
+    <view class="ar_cont_h1">{{guide.name}}</view>
+    <text>{{guide.introduce}}
+    </text>
+    <view class="ar_cont_h2">
+    【详细信息】
+    </view>
+
+    <view class="ar_sevice_item" style="border-top:1px solid #ddd;">
+        <text class="ar_cont_subject">从业时间：{{guide.seniority}}</text>
+        <!-- <text class="ar_cont_price">¥600</text> -->
+    
+    </view>
+
+    <view class="ar_sevice_item">
+        <text class="ar_cont_subject">擅长语言：{{guide.language}}</text>
+      
+    </view>
+
+    <view class="ar_sevice_item">
+        <text class="ar_cont_subject">人气：{{guide.popuality}}</text>
+     
+       
+    </view>
+
+     <view class="ar_sevice_item">
+        <text class="ar_cont_subject">居住地：{{guide.address}}</text>
+
+      
+    </view>
+
+     <view class="ar_sevice_item">
+        <text class="">专长：{{guide.speciality}}</text>
+
+     
+    </view>
+
+
+      
+        <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
+            <text class = "yuyue">预约</text>
+        </view>
+
+</view>
+
+</view>

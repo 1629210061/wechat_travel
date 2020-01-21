@@ -1,0 +1,75 @@
+<view class="container">
+
+    <!-- <view class="ar_coverpath">
+        <image src="../../images/banner_02.png" mode="aspectFill"></image>
+    </view> -->
+
+    <view class="ar_cont">
+
+      <view class ='name'>
+        <text class="ar_cont_h1">姓名</text>
+
+          <input type="text" value='{{ordername}}' bindinput='getname' placeholder="" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+      
+      </view>
+      <view class='name'>
+        <text class="ar_cont_h1">联系电话</text>
+
+          <input type="text" value='{{tel}}' bindinput='gettel' placeholder="" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+      
+      </view>
+
+         
+
+        <text class="ar_cont_h1">开始时间</text>
+        <view class="ar_date_time">
+            <view class="ar_date">
+                <image src="../../images/date.png"></image>
+                <picker mode="date" placeholder="选择日期" value="{{startdate}}" start="{{nowdate}}" end="2025-09-01" bindchange="bindDateChange1" >
+                    <view>
+                        {{startdate}}
+                    </view>
+                </picker>
+            </view>
+            <view class="ar_time">
+                <image src="../../images/time.png"></image>
+                <picker mode="time" placeholder="选择时间" value="{{starttime}}" start="01:00" end="24:00" bindchange="bindTimeChange1">
+                    <view>
+                        {{starttime}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+
+         <text class="ar_cont_h1">结束时间</text>
+        <view class="ar_date_time">
+            <view class="ar_date">
+                <image src="../../images/date.png"></image>
+                <picker mode="date" placeholder="选择日期" value="{{enddate}}" start="{{nowdate}}" end="2025-09-01" bindchange="bindDateChange2" >
+                    <view>
+                        {{enddate}}
+                    </view>
+                </picker>
+            </view>
+            <view class="ar_time">
+                <image src="../../images/time.png"></image>
+                <picker mode="time" placeholder="选择时间" value="{{endtime}}" start="01:00" end="24:00" bindchange="bindTimeChange2">
+                    <view>
+                        {{endtime}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+
+        
+        <text class="ar_cont_h1">留言信息</text>
+
+        <textarea  type="text" value='{{message}}' bindinput='bindinput' placeholder="" class="input_msg1" placeholder-style="font-family:'微软雅黑'"></textarea>
+
+        <button class="ar_book" bindtap="bindToastTap">确认预定</button>
+        <toast hidden="{{bookToastHidden}}"  bindchange="hideToast">
+        预定成功
+        </toast>
+    </view>
+
+</view>
