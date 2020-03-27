@@ -5,7 +5,7 @@ var app = getApp();
 var url = app.globalData.url
 Page({
   data: {
-
+    images:''
   },
   //事件处理函数
   bindItemTap: function(e) {
@@ -46,11 +46,17 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
-      success: function (res) {
-        console.log(res.data)
+      success: function (res) {  
+        console.log(res.data)    
         that.setData({
-          strategies: res.data
+          strategies:res.data,
         })
+        // if(res.data.imgurl!=null){
+        //   that.setData({
+        //     images:res.data.imgurl.split('&')
+        //   })
+        // }
+        // console.log(res.data)
       }
     })
   },

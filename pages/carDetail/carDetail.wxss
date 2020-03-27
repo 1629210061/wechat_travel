@@ -23,89 +23,33 @@ page {
 
 .place_msg {
   background: #fff;
-  padding: 20rpx;
-  box-shadow: 1px 1px 1px #ddd;
-}
-
-.place_name {
-  font-size: 1.8em;
-  display: block;
-}
-
-.place_enname {
-  color: #696969;
-}
-
-.place_level {
-  float: right;
-  font-size: 1em;
-  color: #ff6600;
-}
-
-.place_introduction {
-    padding: 5px 0 15px 0;
-    border-bottom: 1px solid #ddd;
-    margin: 15px 5px 5px 5px;
-    font-size: 15px;
-    color: #696969;
-    line-height: 24px;
-}
-
-/*tab*/
-
-.tab {
-  display: flex;
-  margin-top: 30rpx;
-  background-color: #fff;
-  line-height: 2.6;
-  box-shadow: 1px 1px 0 #ddd;
+  padding: 10px 20px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.tab-item {
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.iconfont {
+  font-size: 19px;
+  margin-right: 5px;
 }
 
-.tab-active {
-  color: #ff6600;
-  border-bottom: 2px solid #ff6600;
-}
-
-.details {
-  background-color: #fff;
-}
-
-.details-img {
-  margin-top: 2px;
-  display: block;
-  width: 100%;
-}
-
-.parameter {
-  background: #fff;
-}
-
-.no-parameter {
-  text-align: center;
-  padding: 2em 0;
-  color: #666;
+.place_name {
+  font-size: 20px;
 }
 
 .parameter-data {
   padding: 0 10px;
+  background-color: white;
 }
 
 .parameter-item {
   display: flex;
-  line-height: 3;
-  border-bottom: 1px solid #ddd;
+  line-height: 30px;
+  margin: 5px 0px;
 }
 
 .parameter_name {
-  min-width: 25%;
+  min-width: 20%;
   color: rgba(46, 44, 44, 0.863);
 }
 
@@ -142,20 +86,16 @@ page {
 }
 
 .collect {
-  background: #ff6600;
+  background: #f60;
 }
 
 .buy {
- 
-  background: #FE4543;
-  
-}
-.call {
- 
-  background: #CDC0B0;
-  
+  background: #fe4543;
 }
 
+.call {
+  background: #cdc0b0;
+}
 
 .spec-menu-bg {
   width: 100%;
@@ -184,12 +124,14 @@ page {
   padding-top: 1em;
   padding-left: 7em;
 }
+
 .spec-menu-top1 {
   min-height: 1.5em;
   border-bottom: 1px solid #ddd;
   padding-top: 1em;
   padding-left: 0em;
 }
+
 .spec-pic-content {
   position: absolute;
   top: -1.5em;
@@ -227,8 +169,7 @@ page {
 }
 
 .spec-price {
-   margin-top: 10px;
-
+  margin-top: 10px;
   color: red;
 }
 
@@ -306,8 +247,7 @@ page {
   line-height: 2.8;
 }
 
-
-.spec-summary .name{
+.spec-summary .name {
   font-size: 28rpx;
   color: #666;
   font-weight: bold;
@@ -338,6 +278,19 @@ page {
   text-align: center;
 }
 
+.title-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
 
+.title-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 
-
+.parmaeter-title {
+  font-size: 16px;
+  font-weight: bold;
+}

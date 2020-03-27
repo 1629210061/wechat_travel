@@ -35,12 +35,30 @@ swiper.swiper {
 .place_msg {
   background: #fff;
   padding: 20rpx;
-  box-shadow: 1px 1px 1px #ddd;
+  margin-bottom: 15px;  
 }
 
 .place_name {
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
+
+.title-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.title-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.parmaeter-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 
 .place_level {
   float: right;
@@ -81,16 +99,23 @@ swiper.swiper {
   border-bottom: 2px solid #ff6600;
 }
 
-.details {
-  background-color: #fff;
+
+.title-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
 }
 
-.details-img {
-  margin-top: 2px;
-  display: block;
-  width: 100%;
+.title-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
+.parmaeter-title {
+  font-size: 20px;
+  font-weight: bold;
+}
 .parameter {
   background: #fff;
 }
@@ -102,13 +127,22 @@ swiper.swiper {
 }
 
 .parameter-data {
-  padding: 0 10px;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.iconfont{
+  font-size: 18px;
 }
 
 .parameter-item {
   display: flex;
-  line-height: 3;
-  border-bottom: 1px solid #ddd;
+  line-height: 48px;
+  align-items: center;
+
+}
+.iconfont{
+  margin-right: 10px;
 }
 
 .parameter_name {

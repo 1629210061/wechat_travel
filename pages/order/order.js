@@ -27,6 +27,7 @@ Page({
         userid: that.data.userid,
       },
       success: function(res) {
+        console.log(res.data)
         that.setData({
           orders: res.data,
         })

@@ -8,9 +8,19 @@ Page({
     hasUserInfo: false,
     logoid: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    imgUrls: [golbal.url+'images/1.jpg',
-      golbal.url+'images/2.jpg',
-      golbal.url+'images/3.jpg'
+    imgs: [{
+        url: golbal.url + 'images/1.jpg',
+        title: '西湖美景，邀你来看'
+      },
+      {
+        url: golbal.url + 'images/2.jpg',
+        title: '冬去春来，带上家人来踏青吧'
+      }, 
+      {
+        url: golbal.url + 'images/3.jpg',
+        title: '放松自己，来一场说走就走的旅行'
+      }
+      
     ],
     logos1: [{
       image: "/images/logo1.png",
@@ -29,6 +39,7 @@ Page({
 
   onLoad: function(options) {
     var that = this;
+
     wx.request({
       url: 'http://localhost:8080/attraction/random',
       method: 'get',
@@ -123,7 +134,7 @@ Page({
   getDataFromServer: function(scanResult) {
     var that = this;
     wx.request({
-      url: golbal.server_data_interface+"/findByName",
+      url: golbal.server_data_interface + "/findByName",
       method: 'GET',
       header: {
         "Content-Type": 'application/x-www-form-urlencoded'

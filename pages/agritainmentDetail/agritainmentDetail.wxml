@@ -12,32 +12,34 @@
     <text class="place_name">{{agritainment.name}}</text>
     <text class="place_level">{{agritainment.score}}分</text>
   </view>
-  <view class="tab">
-    <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">详情介绍</view>
-    <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">路线指导</view>
-  </view>
-  <view class="details" wx:if="{{currentTab==0}}">
+
+  <view class="details">
     <view class="parameter-data">
-      <view class="parameter-item">
-        <text class="parameter_name">地址</text>
-        <text class="parameter_val" decode="{{true}}">{{agritainment.address}}</text>
+      <view class="title-box">
+        <image src="../../images/agritainment.png" class="title-img"></image>
+        <text class="parmaeter-title">详细信息</text>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">售价</text>
-        <text class="parameter_val" decode="{{true}}">单人：{{agritainment.price}}元</text>
+        <text class="iconfont iconmap"></text>
+        <text class="parameter_val" decode="{{true}}">地址&nbsp;&nbsp;{{agritainment.address}}</text>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">开放时间</text>
-        <text class="parameter_val" decode="{{true}}">{{agritainment.time}}</text>
+        <text class="iconfont iconmobile-phone"></text>
+        <text class="parameter_val" decode="{{true}}">联系电话&nbsp;&nbsp;{{agritainment.tel}}</text>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">联系电话</text>
-        <text class="parameter_val" decode="{{true}}">{{agritainment.tel}}</text>
+        <text class="iconfont icondollar"></text>
+        <text class="parameter_val" decode="{{true}}">售价&nbsp;&nbsp;{{agritainment.price}}元/人</text>
       </view>
+      <view class="parameter-item">
+        <text class="iconfont iconontimeshipment"></text>
+        <text class="parameter_val" decode="{{true}}">开放时间&nbsp;&nbsp;{{agritainment.time}}</text>
+      </view>
+
     </view>
   </view>
   <view class="parameter" wx:if="{{currentTab==1}}">
-    <block >
+    <block>
       <image class="details-img" bindtap='click' src="{{agritainment.traffic_images}}" mode="widthFix"></image>
     </block>
   </view>
@@ -50,7 +52,7 @@
 <view wx:if="{{showSpecMenu}}" class="spec-menu">
   <view class="spec-menu-top">
     <view class="spec-pic-content">
-      <image src="{{agritainment.fm_images}}" class="spec-pic"  mode="aspectFill"></image>
+      <image src="{{agritainment.fm_images}}" class="spec-pic" mode="aspectFill"></image>
     </view>
     <button class="spec-menu-close" bindtap="hideSpecMenu">
       <icon type="clear" color="#ddd" />

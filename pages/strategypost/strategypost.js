@@ -47,6 +47,8 @@ Page({
   // 提交清空当前值
   bindSubmit: function () { 
     var that = this;
+    console.log(that.data.imageList.join('&'))
+    console.log(that.data.imageList)
     wx.request({
       url: url + 'strategy/addStrategy',
       method: 'POST',
@@ -75,9 +77,12 @@ Page({
                 noteNowLen: 0,
                 // imageList:[]
               })
+              wx.navigateTo({
+                url: '../method/method',
+              })
             }
           })
-
+         
         }
         
       }
@@ -105,11 +110,11 @@ Page({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
-        var imgeList = that.data.imageList.concat(res.tempFilePaths);
+        var imgList = that.data.imageList.concat(res.tempFilePaths);
+        console.log(imgList)
         that.setData({
-          imageList: imgeList
+          imageList: imgList
         });
-        console.log(that.data.imageList)
       }
     })
   },

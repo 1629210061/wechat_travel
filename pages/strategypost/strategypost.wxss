@@ -1,46 +1,4 @@
 /* pages/strategypost.wxss */
-.comment1-description{
-  padding:30rpx 0;
-  display:flex;
-  flex-direction:row;
-}
-
-.weui-cells_after-title{
-  position:relative;
-  width: 90%;
-  margin-top: 20px;
-  border:1px solid #ddd;
-}
-.weui-cells_after-title1{
-  position: relative;
-  width: 90%;
-  margin-top: 10px;
- 
-  border:1px solid #ddd;
-}
-
-.btnSf{
-  width: 30%;
-  margin:40rpx auto;
-  
-}
-.btnSf button{
-    background: #3399CC;
-    color: #fff;
-}
-
-.btnSf button:active{
-  background:  	#3399CC;
-  color: #fff;
-}
-.weui-textarea-counter{
-  
-  margin-left: 260px;
-}
-
-
-
-
 
 
 
@@ -57,6 +15,64 @@ icon {
   flex-direction: column;
   background-color: #fff;
 }
+
+/* 标题 */
+.post-title{
+  position: relative;
+  width: 85%;
+  border:1px solid #ddd;
+  height: 2em;
+  line-height: 2em;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 0px 15px;
+}
+.post-title .post-textarea{
+  line-height: 2em;
+  font-size: 15px;
+}
+
+/* 内容 */
+.post-content{
+  position:relative;
+  width: 90%;
+  margin-top: 20px;
+  border:1px solid #ddd;
+  border-radius: 5px;
+}
+
+.post-btn{
+  width: 30%;
+  margin:40rpx auto;
+  
+}
+.post-btn button{
+    background: #3399CC;
+    color: #fff;
+}
+
+.post-btn button:active{
+  background:	#3399CC;
+  color: #fff;
+}
+.post-textarea-counter{
+  float: right;
+  font-size: 15px;
+  color: rgb(83, 82, 82);
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.post-content .post-textarea{
+  padding: 15px;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(83, 82, 82)
+}
+
+
+
+/* 发布图片 */
 .weui-uploader{
   width: 94%;
   margin-left: 3%;
@@ -117,3 +133,4 @@ icon {
   height: 100%;
   opacity: 0;
 }
+

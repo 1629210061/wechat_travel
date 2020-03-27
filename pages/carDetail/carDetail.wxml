@@ -5,30 +5,38 @@
     <text class="place_name">{{car.name}}</text>
   </view>
   <view class="parameter-data">
-    <view class="parameter-item">
-      <text class="parameter_name">所属公司</text>
-      <text class="parameter_val" decode="{{true}}">{{car.compony}}</text>
+    <view class="title-box">
+      <image src="../../images/rentcar.png" class="title-img"></image>
+      <text class="parmaeter-title">租车详情</text>
     </view>
     <view class="parameter-item">
+      <text class="iconfont iconMoneymanagement-fill"></text>
+      <text class="parameter_name">所属公司</text>
+      <text class="parameter_val" decode="{{true}}">{{car.company}}</text>
+    </view>
+    <view class="parameter-item">
+      <text class="iconfont iconmap1"></text>
       <text class="parameter_name">公司地址</text>
       <text class="parameter_val" decode="{{true}}">{{car.address}}</text>
     </view>
     <view class="parameter-item">
+      <text class="iconfont iconphone1"></text>
       <text class="parameter_name">联系电话</text>
       <text class="parameter_val" decode="{{true}}">{{car.tel}}</text>
     </view>
     <view class="parameter-item">
+      <text class="iconfont iconconsumption-fill"></text>
       <text class="parameter_name">基本费用</text>
       <text class="parameter_val" decode="{{true}}">{{car.introduce}}</text>
     </view>
     <view class="parameter-item">
+      <text class="iconfont icondiscounts-fill"></text>
       <text class="parameter_name">额外收费</text>
       <text class="parameter_val" decode="{{true}}">{{car.tip}}</text>
     </view>
   </view>
 </view>
 <view class="footer">
-
   <button class="collect" size="mini" bindtap="collect">收藏</button>
   <button class="buy" size="mini" bindtap="buy">预定</button>
 </view>

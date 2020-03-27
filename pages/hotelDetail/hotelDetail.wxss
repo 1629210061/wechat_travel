@@ -54,12 +54,12 @@ swiper.swiper {
 }
 
 .place_introduction {
-    padding: 5px 0 15px 0;
-    border-bottom: 1px solid #ddd;
-    margin: 15px 5px 5px 5px;
-    font-size: 15px;
+    padding: 15px;
+    font-size: 13px;
     color: #696969;
+    background-color: #fff;
     line-height: 24px;
+    margin-bottom: 10px;
 }
 
 /*tab*/
@@ -69,8 +69,8 @@ swiper.swiper {
   margin-top: 30rpx;
   background-color: #fff;
   line-height: 2.6;
-  box-shadow: 1px 1px 0 #ddd;
-  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+
 }
 
 .tab-item {
@@ -86,7 +86,7 @@ swiper.swiper {
 }
 
 .details {
-  background-color: #fff;
+
 }
 
 .details-img {
@@ -107,12 +107,14 @@ swiper.swiper {
 
 .parameter-data {
   padding: 0 10px;
+  background-color: white;
 }
 
 .parameter-item {
   display: flex;
-  line-height: 3;
-  border-bottom: 1px solid #ddd;
+  line-height: 26px;
+  margin: 10px 0px;
+
 }
 
 .parameter_name {
@@ -369,3 +371,66 @@ swiper.swiper {
  width: 100rpx;
  height: 100rpx;
 }
+
+
+.iconfont {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.address {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 导航按钮 */
+
+.address .map {
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  color: #000;
+  margin-right: 10px;
+  padding: 3px 15px;
+  background: url('http://localhost:8080/images/xihu/0.jpg');
+}
+
+.address-content {
+  width: 70%;
+  display: flex;
+  height: 60px;
+  align-items: center;
+}
+
+
+
+.hotel-item{
+  background-color: white;
+  padding: 10px 20px;
+  color: #666;
+  line-height: 26px;
+}
+
+.title-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 0px;
+}
+
+.title-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+
+.parmaeter-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+

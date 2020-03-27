@@ -1,23 +1,14 @@
 <!--pages/strategypost.wxml-->
 <view class="container">
   <!--文本域  -->
-  <view class="weui-cells_after-title1">
-
-    <view class="weui-cell">
-      <view class="weui-cell__bd">
-        <textarea class="weui-textarea" bindinput="bindTextAreaChange1" placeholder="" style="height: 2em" maxlength="{{noteMaxLen}}" focus />
-        
-      </view>
-    </view>
+  <view class="post-title">
+    <input class="post-textarea" bindinput="bindTextAreaChange1" placeholder="请输入标题....."  maxlength="{{noteMaxLen}}" focus></input>
   </view>
 
-  <view class="weui-cells_after-title">
-    <view class="weui-cell">
-      <view class="weui-cell__bd">
-        <textarea class="weui-textarea" bindinput="bindTextAreaChange2" placeholder="内容" style="height: 16em"  maxlength="{{noteMaxLen}}" focus />
-        <view class="weui-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
-      </view>
-    </view>
+  <!-- 攻略内容 -->
+  <view class="post-content">
+    <textarea class="post-textarea" bindinput="bindTextAreaChange2" placeholder="在这分享你的旅游旅游攻略吧....." style="height: 16em" maxlength="{{noteMaxLen}}" focus />
+    <view class="post-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
   </view>
 
   <view class="weui">
@@ -36,7 +27,7 @@
   </view>
 
   <!--发布按钮  -->
-  <view class="btnSf">
+  <view class="post-btn">
     <button bindtap="bindSubmit">发布</button>
   </view>
 

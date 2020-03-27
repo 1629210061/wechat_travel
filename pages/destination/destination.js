@@ -17,7 +17,7 @@ Page({
       },
       data: {
         area: that.data.city,
-        url: app.getApp().globalData.url
+        url: getApp().globalData.url
       },
       success: function (res) {
         console.log(res.data)

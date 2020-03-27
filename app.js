@@ -17,7 +17,6 @@ App({
     session_key:null,
     openid:null,
 
-  
   },
 
 })

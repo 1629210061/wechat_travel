@@ -8,14 +8,14 @@
     </block>
   </swiper>
 
-  <view class="index-nav">
+  <!-- <view class="index-nav">
     <block wx:for="{{navs}}">
       <view class="nav-item">
         <image src="{{item.icon}}" class="nav-icon" mode="widthFix"/>
         <text>{{item.name}}</text>
       </view>
     </block>
-  </view>
+  </view> -->
 
   <view class="index-section">
     <view class="section-title">特产专区</view>

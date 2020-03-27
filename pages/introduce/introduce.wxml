@@ -1,10 +1,8 @@
 <!--index.wxml-->
 
-
-
 <view class="place-view">
   <swiper bindtap="gotovideo" class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-color="rgba(0, 0, 0, 0.1)" indicator-active-color="rgba(0, 0, 0, 0.6)">
-    <block wx:for="{{lb_pictures}}" >
+    <block wx:for="{{lb_pictures}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" />
       </swiper-item>
@@ -12,8 +10,8 @@
   </swiper>
   <view class="place_msg">
     <view class="place_name">
-    {{cn_name}}
-    <image class='eyeimg' src='../../images/eye.png' bindtap='panorama'></image>
+      {{cn_name}}
+      <image class='eyeimg' src='../../images/eye.png' bindtap='panorama'></image>
     </view>
     <text class="place_enname">{{eg_name}}</text>
     <text class="place_level">{{level}}</text>
@@ -21,29 +19,50 @@
   <view class="tab">
     <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">景点介绍</view>
     <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">路线指导</view>
-     <view class="tab-item {{currentTab==2?'tab-active' : ''}}" data-current="2" bindtap="tab">评论</view>
+    <view class="tab-item {{currentTab==2?'tab-active' : ''}}" data-current="2" bindtap="tab">评论</view>
   </view>
   <view class="details" wx:if="{{currentTab==0}}">
-    <view wx:if="{{introduce==''}}" class="no-parameter">该景点没有详细介绍</view>
-    <view class="place_introduction">{{introduce}}</view>
+    <!-- 景点介绍 -->
+    <view class="introduce-box">
+      <view wx:if="{{introduce==''}}" class="no-parameter">该景点没有详细介绍</view>
+      <view class="place_introduction" style="-webkit-line-clamp: {{line_clamp}};">
+        <text>{{introduce}}</text>
+      </view>
+      <view class="introduce-btn">
+        <text class="iconfont iconarrow-down" bindtap="showAll">{{introduce_button_text}}</text>
+      </view>
+
+    </view>
+
+
+    <!-- 景点玩乐详情 -->
     <view class="parameter-data">
-      <view class="parameter-item">
-        <text class="parameter_name">地址</text>
-        <text class="parameter_val" decode="{{true}}">{{address}}</text>
+      <view class="title-box">
+        <image src="../../images/view.png" class="title-img"></image>
+        <text class="parmaeter-title">景点玩乐详情</text>
+      </view>
+
+      <view class=" address">
+        <view class="address-content">
+          <text class="iconfont iconmap1"></text>
+          <text class="parameter_val " decode="{{true}}">{{address}}</text>
+        </view>
+        <view class="map" bindtap="click">
+          <text>导航</text>
+        </view>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">门票</text>
-        <text class="parameter_val" decode="{{true}}">{{ticket}}</text>
+        <text class="iconfont iconconsumption-fill"></text>
+        <text class="parameter_val" decode="{{true}}">门票&nbsp;&nbsp;{{ticket}}</text>
+      </view>
+      <view class="parameter-item">
+        <text class="iconfont iconontimeshipment"></text>
+        <text class="parameter_val " decode="{{true}}">开放时间&nbsp;&nbsp;{{open_time}}</text>
 
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">开放时间</text>
-        <text class="parameter_val" decode="{{true}}">{{open_time}}</text>
-
-      </view>
-      <view class="parameter-item">
-        <text class="parameter_name">电话</text>
-        <text class="parameter_val" decode="{{true}}">{{telephone}}</text>
+        <text class="iconfont iconphone1"></text>
+        <text class="parameter_val " decode="{{true}}">电话&nbsp;&nbsp;{{telephone}}</text>
 
       </view>
 
@@ -54,25 +73,40 @@
       <image class="details-img" src="{{item}}" mode="widthFix"></image>
     </block>
   </view>
-
+  <!-- 路线指导 -->
   <view class="parameter" wx:if="{{currentTab==1}}">
-    <view class="place_introduction">景区路线指导：{{traffic}}</view>
-    <block wx:for="{{traffic_pic}}">
-      <image class="details-img"  bindtap='click' src="{{item}}" mode="widthFix"></image>
-    </block>
-    <view class="place_introduction">
-    <text>厕所信息（点击查看地图）</text>
-    <image class="wcimf"  src="../../images/wc.png" bindtap='gotomap' mode="widthFix"></image>
+    <view class="traffic-box">
+      <view class="title-box">
+        <image src="../../images/traffic.png" class="title-img"></image>
+        <text class="parmaeter-title">交通</text>
+      </view>
+      <view class="traffic_introduction">
+        <text>{{traffic}}</text>
+      </view>
+    </view>
+    <!-- 其他 -->
+    <view class="traffic-other">
+      <view class="title-box">
+        <image src="../../images/traffic_other.png" class="title-img"></image>
+        <text class="parmaeter-title">其他</text>
+      </view>
+      <view class="other_title" bindtap="gotomap">
+        <text class="iconfont iconcesuo1"></text>
+        <text >附近厕所信息</text>
+        <text class="iconfont iconarrow-right"></text>
+      </view>
+
+      <view class="other_title" bindtap="gotoparking">
+        <text class="iconfont icontingche"></text>
+        <text>附近停车位</text>
+        <text class="iconfont iconarrow-right"></text>
+      </view>
     </view>
 
-    <view class="place_introduction">
-    <text>附近停车位（点击查看地图）</text>
-    <image class="wcimf"  src="../../images/parking.png" bindtap='gotoparking' mode="widthFix"></image>
-    </view>
   </view>
 
   <view class="parameter" wx:if="{{currentTab==2}}">
-    
+
     <block wx:for="{{comments}}">
       <view class="feed-item">
         <view class="feed-source">
@@ -84,17 +118,16 @@
           </a>
           <image class="item-more" mode="aspectFit" src=""></image>
         </view>
-        <view class="feed-content">  
+        <view class="feed-content">
           <view class="answer-body">
             <view bindtap="bindItemTap" data-id="{{item.id}}">
               <text class="answer-txt" aid="{{method_id}}">{{item.content}}</text>
             </view>
           </view>
         </view>
-        
+
         <view wx:for="{{tools.split(item.images)}}" class="imagelist">
-          <image class="images" src = "{{item}}"></image>
-          <!-- <text>{{tools.split(item.images)}}</text> -->
+          <image class="images" src="{{item}}"></image>
         </view>
 
       </view>
@@ -104,10 +137,10 @@
   </view>
 
   <button class="kf_button" open-type="contact" session-from="weapp">
-  <image class="kf_image" src="../../images/kefu.png"></image>
+    <image class="kf_image" src="../../images/kefu.png"></image>
   </button>
   <view class="footer">
- <view class='icon' bindtap='comment'>
+    <view class='icon' bindtap='comment'>
       <image src='/images/comment.png' style='width:20px;height:17px;'></image>
       <text>评论</text>
     </view>
@@ -118,20 +151,20 @@
 </view>
 
 <view wx:if="{{showcomment}}" class="modal">
-  <view  class="spec-menu" >
+  <view class="spec-menu">
     <view class='text'>
-    <view class='cancel' bindtap='closemodal'>取消</view>
-    <view class='confirm' bindtap='post'>确定</view>
-    </view> 
+      <view class='cancel' bindtap='closemodal'>取消</view>
+      <view class='confirm' bindtap='post'>确定</view>
+    </view>
     <view class='content' style="margin-bottom:{{bottom}}px">
-      <textarea class='textarea' value='{{content}}'  bindinput='bindinput' placeholder=""   bindfocus="inputFocus" bindblur="inputBlur"  adjust-position="true"> </textarea>
+      <textarea class='textarea' value='{{content}}' bindinput='bindinput' placeholder="" bindfocus="inputFocus" bindblur="inputBlur" adjust-position="true"> </textarea>
     </view>
   </view>
 
 </view>
 
-  
 
+<!-- 购买门票 -->
 <view wx:if="{{showSpecMenu}}" class="spec-menu">
   <view class="spec-menu-top">
     <view class="spec-pic-content">

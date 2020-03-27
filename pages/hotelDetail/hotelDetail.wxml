@@ -11,55 +11,69 @@
   <view class="place_msg">
     <text class="place_name">{{hotel.cn_name}}</text>
     <text class="place_enname">{{hotel.eg_name}}</text>
-    <text class="place_level">{{hotel.score}}</text>
+    <block wx:if="{{hotel.score}}!=null&&{{hotel.score!=''}}">
+      <text class="place_level">{{hotel.score}}</text>
+    </block>
   </view>
   <view class="tab">
     <view class="tab-item {{currentTab==0?'tab-active' : ''}}" data-current="0" bindtap="tab">酒店介绍</view>
-    <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">路线指导</view>
+    <view class="tab-item {{currentTab==1?'tab-active' : ''}}" data-current="1" bindtap="tab">酒店攻略</view>
   </view>
   <view class="details" wx:if="{{currentTab==0}}">
-    <!-- <view wx:if="{{hotel.introduce==''}}" class="no-parameter">该酒店没有详细介绍</view> -->
+    <view wx:if="{{hotel.introduce==''}}" class="no-parameter">该酒店没有详细介绍</view>
     <view class="place_introduction">{{hotel.introduce}}</view>
     <view class="parameter-data">
-      <view class="parameter-item">
-        <text class="parameter_name">地址</text>
-        <text class="parameter_val" decode="{{true}}">{{hotel.address}}</text>
+      <view class="title-box">
+        <image src="../../images/hotel.png" class="title-img"></image>
+        <text class="parmaeter-title">酒店详情</text>
+      </view>
+      <!-- 地址导航 -->
+      <view class=" address">
+        <view class="address-content">
+          <text class="iconfont iconmap"></text>
+          <text class="parameter_val " decode="{{true}}">{{hotel.address}}</text>
+        </view>
+        <view class="map" bindtap="click">
+          <text>导航</text>
+        </view>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">入住时间</text>
-        <text class="parameter_val" decode="{{true}}">{{hotel.in_day}}</text>
+        <text class="iconfont icontask-management"></text>
+        <text class="parameter_val" decode="{{true}}">入住时间&nbsp;&nbsp;{{hotel.in_day}}</text>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">离开时间</text>
-        <text class="parameter_val" decode="{{true}}">{{hotel.out_day}}</text>
+        <text class="iconfont iconTop"></text>
+        <text class="parameter_val" decode="{{true}}">离开时间&nbsp;&nbsp;{{hotel.out_day}}</text>
       </view>
       <view class="parameter-item">
-        <text class="parameter_name">基础服务</text>
-        <text class="parameter_val" decode="{{true}}">{{hotel.facilities}}</text>
+        <text class="iconfont icontrust"></text>
+        <text class="parameter_val" decode="{{true}}">基础服务&nbsp;&nbsp;{{hotel.facilities}}</text>
       </view>
-      <view class="parameter-item">
-        <text class="parameter_name">酒店攻略</text>
-        <text class="parameter_val" decode="{{true}}">{{hotel.tip}}</text>
-      </view>
+
     </view>
     <block wx:for="{{dt_images}}">
       <image class="details-img" src="{{item}}" mode="widthFix"></image>
     </block>
   </view>
+  <!-- 酒店攻略 -->
   <view class="parameter" wx:if="{{currentTab==1}}">
-    <block>
-      <image class="details-img" bindtap='click' src="{{hotel.traffic_images}}" mode="widthFix"></image>
-    </block>
+    <view class="title-box">
+      <image src="../../images/book.png" class="title-img" style="width:25px!important;height:25px!important;"></image>
+      <text class="parmaeter-title">酒店攻略</text>
+    </view>
+    <view class="hotel-item">
+      <text class="hotel_val" decode="{{true}}">酒店攻略&nbsp;&nbsp;{{hotel.tip}}</text>
+    </view>
   </view>
 
-  
+
 
   <button class="kf_button" open-type="contact" session-from="weapp">
-  <image class="kf_image" src="../../images/kefu.png"></image>
+    <image class="kf_image" src="../../images/kefu.png"></image>
   </button>
 
   <view class="footer">
-    
+
     <button class="collect" size="mini" bindtap="collect">收藏</button>
     <button class="buy" size="mini" bindtap="buy">预定</button>
   </view>

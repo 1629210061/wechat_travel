@@ -4,12 +4,10 @@
   <block wx:for="{{strategies}}">
     <view class="feed-item">
       <view class="feed-source">
-        <a class="">
-          <view class="avatar">
-            <image src="{{item.avatarurl}}"></image>
-          </view>
-          <text>{{item.nickname}}</text>
-        </a>
+        <view class="avatar">
+          <image src="{{item.avatarurl}}"></image>
+        </view>
+        <text>{{item.nickname}}</text>
         <image class="item-more" mode="aspectFit" src=""></image>
       </view>
       <view class="feed-content">
@@ -21,7 +19,7 @@
             <text class="answer-txt" aid="{{method_id}}">{{item.content}}</text>
           </view>
         </view>
-        <view class="answer-actions" bindtap="bindItemTap">
+        <!-- <view class="answer-actions" bindtap="bindItemTap">
           <view class="like dot">
             <a>{{item.agree}} 赞同 </a>
           </view>
@@ -31,10 +29,17 @@
           <view class="follow-it">
             <a>关注攻略</a>
           </view>
+        </view> -->
+        <view class="feed-img">
+          <block wx:if="{{item.imgList}}!='' ">
+            <view wx:for="{{item.imgList}}" wx:for-item = "url" class="img-box">
+              <image src="{{url}}"> {{url}}</image>
+            </view>
+          </block>
         </view>
+        
       </view>
     </view>
-
   </block>
   <view class="add-wrap" hover-class="plus-hover" bindtap='add'>
     <image src="../../images/add.png"></image>

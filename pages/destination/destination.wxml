@@ -4,7 +4,7 @@
   <view class="bg">
   </view>
   <view class="img">
-    <image src="http://47.100.19.206/images/bg.png"></image>
+    <image src="http://localhost:8080/images/bg.png"></image>
   </view>
   <view class="pos">
     <text>{{city}}</text>
@@ -12,7 +12,7 @@
   </view>
   <view class="search">
     <input type="text" placeholder="搜索目的地/景点等..." placeholder-class="placeholderClass" bindinput='getname' value=''/>
-    <icon class="icon" size='20' type='search' ></icon>
+    <!-- <icon class="icon" size='20' type='search' ></icon> -->
   </view>
 </view>
 <view class="divider"></view>

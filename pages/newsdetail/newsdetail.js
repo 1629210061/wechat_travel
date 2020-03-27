@@ -27,7 +27,7 @@ Page({
         console.log(res.data)
         that.setData({
           list: res.data,
-          picurl:res.data.picurl.split("&")
+          picurl:res.data.picurl.split("&&")
         })
       }
     })
