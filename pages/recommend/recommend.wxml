@@ -6,7 +6,7 @@
   </view>
   <view class="jg"></view>
     <view class="view-box">
-    <view class="view" wx:if="{{length>0}}">
+    <view class="view" >
       <view class="img" wx:for="{{allview}}"  wx:key="{{index}}" bindtap="enterDetail" data-cnname="{{item.cn_name}}">
         <text class="title">{{item.cn_name}}</text>
         <image src="{{item.picurl}}"></image>

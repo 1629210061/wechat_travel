@@ -3,26 +3,21 @@ Page({
 
   onLoad: function (options) {
     var that = this;
-    that.setData({
-      
-    })
+  
     wx.request({
-      url: getApp().globalData.server_data_interface,
-      method: 'POST',
+      url: getApp().globalData.url +'attraction/recommendAttraction',
+      method: 'get',
       header: {
         "Content-Type": 'application/x-www-form-urlencoded'
       },
       data: {
         openid:wx.getStorageSync("openid"),
-        type: 'recommend'
       },
       success: function (res) {
-       
+        console.log('======='+res.data)
        that.setData({
-         allview:res.data.params.recommends,
-         length: res.data.params.recommends.length
+         allview:res.data,
        })
-        console.log(that.data.allview)
       }
     })
 
@@ -32,6 +27,7 @@ Page({
     let index = e.currentTarget.dataset.index;
     this.setData({
       active: index
+
     })
   },
   // 进入景点详情
